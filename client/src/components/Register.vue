@@ -10,9 +10,8 @@
     id= "password" 
     v-model= "pass"
     >
-    <button
-    @click="register"
-    >Register</button>
+    <button @click="register">Register</button>
+    <div id="resp"></div>
   </div>
 </template>
 
@@ -32,8 +31,8 @@ export default {
             email:this.emailAddress,
             pass: this.pass
         })
-        console.log(`${this.emailAddress} : ${this.pass}`,`${response.data.msg}`)
-
+        console.log(`${response}`)
+        document.getElementById('resp').innerHTML = JSON.stringify(response.data)
       }
   }
 }
